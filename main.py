@@ -1,5 +1,5 @@
 import random as rd
-import numpy as np
+
 x_max = 500
 y_max = 500
 alan = (x_max,y_max)
@@ -11,10 +11,24 @@ class Avci():
 
 class HayvanlarOzellıklerı():
     cıftlesme = 3
-    def __init__(self, hareket, erkek, disi):
-        self.hareket = hareket
+    def __init__(self, erkek, disi):
         self.erkek = erkek
         self.disi = disi
+#hareketlerin fonsiyonlarının tanımlanması
+def sagsol(konumlar ,hareket) :
+    for index in range(konumlar.__len__()):
+        if konumlar[index][0] <= alan[0]:
+            konumlar[index][0] += hareket
+        else :
+            konumlar[index][0] -= hareket
+    return  konumlar
+def ileriasagi(konumlar ,hareket) :
+    for index in range(konumlar.__len__()):
+        if konumlar[index][1] <= alan[0]:
+            konumlar[index][1] += hareket
+        else :
+            konumlar[index][1] -= hareket
+    return  konumlar
 
 class koyun (HayvanlarOzellıklerı):
     konumlar_erkek =[]
@@ -23,10 +37,10 @@ class koyun (HayvanlarOzellıklerı):
         for cinsiyet in "erkek", "disi":
             if cinsiyet == "erkek":
                 for i in range(0, (self.erkek)):
-                    self.konumlar_erkek.append([i, [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)]])
+                    self.konumlar_erkek.append( [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)])
             elif cinsiyet == "disi":
                 for i in range(0, (self.disi)):
-                    self.konumlar_disi.append([i, [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)]])
+                    self.konumlar_disi.append( [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)])
 class inek (HayvanlarOzellıklerı):
     konumlar_erkek =[]
     konumlar_disi =[]
@@ -34,10 +48,10 @@ class inek (HayvanlarOzellıklerı):
         for cinsiyet in "erkek", "disi":
             if cinsiyet == "erkek":
                 for i in range(0, (self.erkek)):
-                    self.konumlar_erkek.append([i, [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)]])
+                    self.konumlar_erkek.append( [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)])
             elif cinsiyet == "disi":
                 for i in range(0, (self.disi)):
-                    self.konumlar_disi.append([i, [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)]])
+                    self.konumlar_disi.append( [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)])
 class aslan (HayvanlarOzellıklerı):
     konumlar_erkek =[]
     konumlar_disi =[]
@@ -45,10 +59,10 @@ class aslan (HayvanlarOzellıklerı):
         for cinsiyet in "erkek", "disi":
             if cinsiyet == "erkek":
                 for i in range(0, (self.erkek)):
-                    self.konumlar_erkek.append([i, [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)]])
+                    self.konumlar_erkek.append( [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)])
             elif cinsiyet == "disi":
                 for i in range(0, (self.disi)):
-                    self.konumlar_disi.append([i, [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)]])
+                    self.konumlar_disi.append( [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)])
 class kurt (HayvanlarOzellıklerı):
     konumlar_erkek =[]
     konumlar_disi =[]
@@ -56,10 +70,10 @@ class kurt (HayvanlarOzellıklerı):
         for cinsiyet in "erkek", "disi":
             if cinsiyet == "erkek":
                 for i in range(0, (self.erkek)):
-                    self.konumlar_erkek.append([i, [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)]])
+                    self.konumlar_erkek.append( [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)])
             elif cinsiyet == "disi":
                 for i in range(0, (self.disi)):
-                    self.konumlar_disi.append([i, [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)]])
+                    self.konumlar_disi.append( [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)])
 class tavuk_horoz (HayvanlarOzellıklerı):
     konumlar_erkek =[]
     konumlar_disi =[]
@@ -67,16 +81,16 @@ class tavuk_horoz (HayvanlarOzellıklerı):
         for cinsiyet in "erkek", "disi":
             if cinsiyet == "erkek":
                 for i in range(0, (self.erkek)):
-                    self.konumlar_erkek.append([i, [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)]])
+                    self.konumlar_erkek.append( [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)])
             elif cinsiyet == "disi":
                 for i in range(0, (self.disi)):
-                    self.konumlar_disi.append([i, [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)]])
+                    self.konumlar_disi.append( [rd.randrange(0, 500, 1), rd.randrange(0, 500, 1)])
 
-koyun =koyun( hareket=2, disi=15, erkek=15)
-inek = inek( hareket=2, disi=5, erkek=5)
-kurt = kurt(hareket=3, disi=5, erkek=5)
-aslan = aslan( hareket=4, disi=4, erkek=4)
-tavuk_horoz = tavuk_horoz(hareket=1, disi=10, erkek=10)
+koyun =koyun( disi=15, erkek=15)
+inek = inek(  disi=5, erkek=5)
+kurt = kurt( disi=5, erkek=5)
+aslan = aslan(  disi=4, erkek=4)
+tavuk_horoz = tavuk_horoz( disi=10, erkek=10)
 # random belirtilen alanda konumlandırma
 koyun.konumlandırma()
 inek.konumlandırma()
@@ -86,9 +100,11 @@ tavuk_horoz.konumlandırma()
 
 
 
+print(koyun.konumlar_erkek)
+sagsol(konumlar=koyun.konumlar_erkek,hareket=2)
+print(koyun.konumlar_erkek)
 
-
-
-
+#a = [13, 15]
+#print(koyun.konumlar_erkek.__len__())
 
 
