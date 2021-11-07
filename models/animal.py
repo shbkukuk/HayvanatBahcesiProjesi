@@ -46,26 +46,33 @@ class Animal_Attributes():
                         self.male -= 1
                         if self.male == 0:
                             break
-                return print(self.male,self.female)
+                return (self.male,self.female)
             except(IndexError):
                 pass
 
-
 #hareketlerin fonsiyonlarının tanımlanması
-def right_left(locations, move) :
+total_br = 0
+def right_left(locations, move,) :
+    global total_br
+    global count
     for index in range(locations.__len__()):
         if locations[index][0] <= area[0]:
             locations[index][0] += move
         else :
             locations[index][0] -= move
-    return  locations
-def forward_backward(locations, move) :
+    total_br += (move * (index + 1))
+
+    return (total_br)
+def forward_backward(locations, move ) :
     for index in range(locations.__len__()):
+        global  total_br
+
         if locations[index][1] <= area[0]:
             locations[index][1] += move
         else :
             locations[index][1] -= move
-    return  locations
+    total_br += (move * (index + 1))
+    return (total_br)
 
 class sheep (Animal_Attributes):
     pass
