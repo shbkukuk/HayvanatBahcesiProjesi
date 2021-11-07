@@ -2,12 +2,11 @@ from models.hunter import Hunter
 from  models.animal import *
 
 hunter = Hunter()
-
 sheeps =sheep(female=15, male=15, location_male=[], location_female=[])
 cows = cow(female=15, male=15, location_male=[], location_female=[])
 wolfs = wolf(female=5, male=5, location_male=[], location_female=[],hunt_lenght=5)
 lions = lion(female=4, male=4, location_male=[], location_female=[],hunt_lenght=4)
-chickens_roosters = chicken_rooster(female=15, male=15, location_male=[], location_female=[])
+chickens_roosters = chicken_rooster(female=10, male=10, location_male=[], location_female=[])
 # random belirtilen alanda konumlandırma
 sheeps.creation_location()
 cows.creation_location()
@@ -21,55 +20,12 @@ lions.reproduction()
 wolfs.reproduction()
 chickens_roosters.reproduction()
 #Avlanma
-for m, f in zip(range(sheeps.female), range(sheeps.male)):
-    if abs(hunter.location[0][0] - sheeps.location_female[m][0]) <= hunter.hunt or \
-            abs(hunter.location[0][1] - sheeps.location_female[m][1]) <= hunter.hunt:
-        sheeps.female -= 1
-        if sheeps.female == 0:
-            break
-    elif abs(hunter.location[0][0] - sheeps.location_male[f][0]) <= hunter.hunt or \
-            abs(hunter.location[0][1] - sheeps.location_male[f][1]) <= hunter.hunt:
-        sheeps.male -= 1
-        if sheeps.male == 0:
-            break
-print(sheeps.female, sheeps.male)
-for m,f in zip (range(cows.female),range(cows.male)):
-    if abs(hunter.location[0][0] - cows.location_female[m][0]) <= hunter.hunt or \
-        abs(hunter.location[0][1] - cows.location_female[m][1]) <= hunter.hunt:
-        cows.female -= 1
-        if sheeps.female == 0:
-            break
-    elif abs(hunter.location[0][0] - cows.location_male[f][0]) <= hunter.hunt or \
-        abs(hunter.location[0][1] - cows.location_male[f][1]) <= hunter.hunt:
-        cows.male -= 1
-        if sheeps.male == 0:
-            break
-print(cows.male,cows.female)
-for m,f in zip (range(wolfs.female),range(wolfs.male)):
-    if abs(hunter.location[0][0] - wolfs.location_female[m][0]) <= hunter.hunt or \
-        abs(hunter.location[0][1] - wolfs.location_female[m][1]) <= hunter.hunt:
-        wolfs.female -= 1
-        if sheeps.female == 0:
-            break
-    elif abs(hunter.location[0][0] - wolfs.location_male[f][0]) <= hunter.hunt or \
-        abs(hunter.location[0][1] - wolfs.location_male[f][1]) <= hunter.hunt:
-        wolfs.male -= 1
-        if sheeps.male == 0:
-            break
-print(wolfs.male,wolfs.female)
-for m,f in zip (range(lions.female),range(lions.male)):
-    if abs(hunter.location[0][0] - lions.location_female[m][0]) <= hunter.hunt or \
-        abs(hunter.location[0][1] - lions.location_female[m][1]) <= hunter.hunt:
-        lions.female -= 1
-        if sheeps.female == 0:
-            break
-    elif abs(hunter.location[0][0] - lions.location_male[f][0]) <= hunter.hunt or \
-        abs(hunter.location[0][1] - lions.location_male[f][1]) <= hunter.hunt:
-        lions.male -= 1
-        if sheeps.male == 0:
-            break
-print(lions.male,lions.female)
-
+sheeps.hunter_hunting()
+sheeps.hunter_hunting()
+cows.hunter_hunting()
+lions.hunter_hunting()
+wolfs.hunter_hunting()
+chickens_roosters.hunter_hunting()
 
 
 

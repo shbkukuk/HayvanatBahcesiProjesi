@@ -1,4 +1,5 @@
 import random as rd
+from  models import hunter
 x_max = 500
 y_max = 500
 area = (x_max, y_max)
@@ -31,6 +32,23 @@ class Animal_Attributes():
                     else:
                         self.female += 1
                         #print(self.female)
+    def hunter_hunting(self):
+        while True:
+            try:
+                for m, f in zip(range(self.female), range(self.male)):
+                    if abs(hunter.Hunter.location[0][0] - self.location_female[m][0]) <= hunter.Hunter.hunt or \
+                            abs(hunter.Hunter.location[0][1] -self.location_female[m][1]) <= hunter.Hunter.hunt:
+                        self.female -= 1
+                        if self.female == 0:
+                            break
+                    elif abs(hunter.Hunter.location[0][0] - self.location_male[f][0]) <= hunter.Hunter.hunt or \
+                            abs(hunter.Hunter.location[0][1] - self.location_male[f][1]) <= hunter.Hunter.hunt:
+                        self.male -= 1
+                        if self.male == 0:
+                            break
+                return print(self.male,self.female)
+            except(IndexError):
+                pass
 
 #hareketlerin fonsiyonlarının tanımlanması
 def right_left(locations, move) :
