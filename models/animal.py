@@ -1,7 +1,7 @@
 import random as rd
 x_max = 500
 y_max = 500
-alan = (x_max,y_max)
+area = (x_max, y_max)
 class Animal_Attributes():
     reproduction_lenght = 3
     def __init__(self, male, female, location_male, location_female):
@@ -27,37 +27,39 @@ class Animal_Attributes():
                     gender = rd.choice(["male", "female"])
                     if gender == "male":
                         self.male += 1
-                        print(self.male)
+                        #print(self.male)
                     else:
                         self.female += 1
-                        print(self.female)
+                        #print(self.female)
 
 #hareketlerin fonsiyonlarının tanımlanması
-def sagsol(locations, move) :
+def right_left(locations, move) :
     for index in range(locations.__len__()):
-        if locations[index][0] <= alan[0]:
+        if locations[index][0] <= area[0]:
             locations[index][0] += move
         else :
             locations[index][0] -= move
     return  locations
-def ileriasagi(locations, move) :
+def forward_backward(locations, move) :
     for index in range(locations.__len__()):
-        if locations[index][1] <= alan[0]:
+        if locations[index][1] <= area[0]:
             locations[index][1] += move
         else :
             locations[index][1] -= move
     return  locations
 
-def hunting():
-    pass
 class sheep (Animal_Attributes):
     pass
 class cow (Animal_Attributes):
     pass
 class lion (Animal_Attributes):
-    pass
+    def __init__(self, male, female, location_male, location_female,hunt_lenght):
+        Animal_Attributes.__init__(self, male, female, location_male, location_female)
+        self.hunt_lenght =hunt_lenght
 class wolf (Animal_Attributes):
-    pass
+    def __init__(self, male, female, location_male, location_female,hunt_lenght):
+        Animal_Attributes.__init__(self, male, female, location_male, location_female)
+        self.hunt_lenght =hunt_lenght
 class chicken_rooster (Animal_Attributes):
     pass
 
