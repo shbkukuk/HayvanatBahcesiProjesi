@@ -37,7 +37,7 @@ class Animal_Attributes():
             try:
                 for m, f in zip(range(self.female), range(self.male)):
                     if abs(hunter.Hunter.location[0][0] - self.location_female[m][0]) <= hunter.Hunter.hunt or \
-                            abs(hunter.Hunter.location[0][1] -self.location_female[m][1]) <= hunter.Hunter.hunt:
+                            abs(hunter.Hunter.location[0][1] - self.location_female[m][1]) <= hunter.Hunter.hunt:
                         self.female -= 1
                         if self.female == 0:
                             break
@@ -75,10 +75,6 @@ class lion (Animal_Attributes):
     def __init__(self, male, female, location_male, location_female,hunt_lenght):
         Animal_Attributes.__init__(self, male, female, location_male, location_female)
         self.hunt_lenght =hunt_lenght
-    def lion_hunting(self):
-        for m,f in zip (range(lion.female),range(lion.male)):
-            for j, k in zip(range(cow.female), range(cow.male)):
-                print("çalıştı")
 class wolf (Animal_Attributes):
     def __init__(self, male, female, location_male, location_female,hunt_lenght):
         Animal_Attributes.__init__(self, male, female, location_male, location_female)

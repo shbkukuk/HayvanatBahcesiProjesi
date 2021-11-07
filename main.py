@@ -27,8 +27,7 @@ lions.hunter_hunting()
 wolfs.hunter_hunting()
 chickens_roosters.hunter_hunting()
 #Avlanma-aslan
-lions.lion_hunting()
-"""for m,f in zip (range(lions.female),range(lions.male)):
+for m,f in zip (range(lions.female),range(lions.male)):
     for j,k in zip(range(cows.female),range(cows.male)):
         if abs(lions.location_female[m][0] - cows.location_female[j][0]) <= lions.hunt_lenght or \
             abs(lions.location_female[m][1] - cows.location_female[j][1]) <= lions.hunt_lenght:
@@ -49,8 +48,75 @@ lions.lion_hunting()
             abs(lions.location_female[m][1] - cows.location_male[j][1]) <= lions.hunt_lenght:
             cows.male -= 1
             if cows.male == 0:
-                break"""
-
+                break
+for m,f in zip (range(lions.female),range(lions.male)):
+    for j,k in zip(range(sheeps.female),range(sheeps.male)):
+        if abs(lions.location_female[m][0] - sheeps.location_female[j][0]) <= lions.hunt_lenght or \
+            abs(lions.location_female[m][1] - sheeps.location_female[j][1]) <= lions.hunt_lenght:
+            sheeps.female -= 1
+            if sheeps.female == 0:
+                break
+        elif abs(lions.location_male[m][0] - sheeps.location_male[j][0]) <= lions.hunt_lenght or \
+            abs(lions.location_male[m][1] - sheeps.location_male[j][1]) <= lions.hunt_lenght:
+            sheeps.male -= 1
+            if sheeps.male == 0:
+                break
+        elif abs(lions.location_male[m][0] - sheeps.location_female[j][0]) <= lions.hunt_lenght or \
+            abs(lions.location_male[m][1] - sheeps.location_female[j][1]) <= lions.hunt_lenght:
+            sheeps.female -= 1
+            if sheeps.female == 0:
+                break
+        elif abs(lions.location_female[m][0] - sheeps.location_male[j][0]) <= lions.hunt_lenght or \
+            abs(lions.location_female[m][1] - sheeps.location_male[j][1]) <= lions.hunt_lenght:
+            sheeps.male -= 1
+            if sheeps.male == 0:
+                break
+#Avlanma-kurt
+for m,f in zip (range(wolfs.female),range(wolfs.male)):
+    for j,k in zip(range(chickens_roosters.female),range(chickens_roosters.male)):
+        if abs(wolfs.location_female[m][0] - chickens_roosters.location_female[j][0]) <= wolfs.hunt_lenght or \
+            abs(wolfs.location_female[m][1] - chickens_roosters.location_female[j][1]) <= wolfs.hunt_lenght:
+            chickens_roosters.female -= 1
+            if chickens_roosters.female == 0:
+                break
+        elif abs(wolfs.location_male[m][0] - chickens_roosters.location_male[j][0]) <= wolfs.hunt_lenght or \
+            abs(wolfs.location_male[m][1] - chickens_roosters.location_male[j][1]) <= wolfs.hunt_lenght:
+            chickens_roosters.male -= 1
+            if chickens_roosters.male == 0:
+                break
+        elif abs(wolfs.location_male[m][0] - chickens_roosters.location_female[j][0]) <= wolfs.hunt_lenght or \
+            abs(wolfs.location_male[m][1] - chickens_roosters.location_female[j][1]) <= wolfs.hunt_lenght:
+            chickens_roosters.female -= 1
+            if chickens_roosters.female == 0:
+                break
+        elif abs(wolfs.location_female[m][0] - chickens_roosters.location_male[j][0]) <= wolfs.hunt_lenght or \
+            abs(wolfs.location_female[m][1] - chickens_roosters.location_male[j][1]) <= wolfs.hunt_lenght:
+            chickens_roosters.male -= 1
+            if chickens_roosters.male == 0:
+                break
+for m,f in zip (range(wolfs.female),range(wolfs.male)):
+    for j,k in zip(range(sheeps.female),range(sheeps.male)):
+        if abs(wolfs.location_female[m][0] - sheeps.location_female[j][0]) <= wolfs.hunt_lenght or \
+            abs(wolfs.location_female[m][1] - sheeps.location_female[j][1]) <= wolfs.hunt_lenght:
+            sheeps.female -= 1
+            if sheeps.female == 0:
+                break
+        elif abs(wolfs.location_male[m][0] - sheeps.location_male[j][0]) <= wolfs.hunt_lenght or \
+            abs(wolfs.location_male[m][1] - sheeps.location_male[j][1]) <= wolfs.hunt_lenght:
+            sheeps.male -= 1
+            if sheeps.male == 0:
+                break
+        elif abs(wolfs.location_male[m][0] - sheeps.location_female[j][0]) <= wolfs.hunt_lenght or \
+            abs(wolfs.location_male[m][1] - sheeps.location_female[j][1]) <= wolfs.hunt_lenght:
+            sheeps.female -= 1
+            if sheeps.female == 0:
+                break
+        elif abs(wolfs.location_female[m][0] - sheeps.location_male[j][0]) <= wolfs.hunt_lenght or \
+            abs(wolfs.location_female[m][1] - sheeps.location_male[j][1]) <= wolfs.hunt_lenght:
+            sheeps.male -= 1
+            if sheeps.male == 0:
+                break
+print(sheeps.male,sheeps.female)
 #hareketler
 right_left(locations=hunter.location, move=hunter.move)
 right_left(locations=sheeps.location_male, move=2)
