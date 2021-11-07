@@ -50,6 +50,7 @@ class Animal_Attributes():
             except(IndexError):
                 pass
 
+
 #hareketlerin fonsiyonlarının tanımlanması
 def right_left(locations, move) :
     for index in range(locations.__len__()):
