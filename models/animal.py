@@ -75,6 +75,10 @@ class lion (Animal_Attributes):
     def __init__(self, male, female, location_male, location_female,hunt_lenght):
         Animal_Attributes.__init__(self, male, female, location_male, location_female)
         self.hunt_lenght =hunt_lenght
+    def lion_hunting(self):
+        for m,f in zip (range(lion.female),range(lion.male)):
+            for j, k in zip(range(cow.female), range(cow.male)):
+                print("çalıştı")
 class wolf (Animal_Attributes):
     def __init__(self, male, female, location_male, location_female,hunt_lenght):
         Animal_Attributes.__init__(self, male, female, location_male, location_female)

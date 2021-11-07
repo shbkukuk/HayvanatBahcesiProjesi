@@ -20,15 +20,15 @@ lions.reproduction()
 wolfs.reproduction()
 chickens_roosters.reproduction()
 #Avlanma-Insan
-"""sheeps.hunter_hunting()
+sheeps.hunter_hunting()
 sheeps.hunter_hunting()
 cows.hunter_hunting()
 lions.hunter_hunting()
 wolfs.hunter_hunting()
-chickens_roosters.hunter_hunting()"""
+chickens_roosters.hunter_hunting()
 #Avlanma-aslan
-
-for m,f in zip (range(lions.female),range(lions.male)):
+lions.lion_hunting()
+"""for m,f in zip (range(lions.female),range(lions.male)):
     for j,k in zip(range(cows.female),range(cows.male)):
         if abs(lions.location_female[m][0] - cows.location_female[j][0]) <= lions.hunt_lenght or \
             abs(lions.location_female[m][1] - cows.location_female[j][1]) <= lions.hunt_lenght:
@@ -49,8 +49,8 @@ for m,f in zip (range(lions.female),range(lions.male)):
             abs(lions.location_female[m][1] - cows.location_male[j][1]) <= lions.hunt_lenght:
             cows.male -= 1
             if cows.male == 0:
-                break
-print(cows.male,cows.female)
+                break"""
+
 #hareketler
 right_left(locations=hunter.location, move=hunter.move)
 right_left(locations=sheeps.location_male, move=2)
