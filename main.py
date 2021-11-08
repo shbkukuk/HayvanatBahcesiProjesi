@@ -14,7 +14,7 @@ cows.creation_location()
 lions.creation_location()
 wolfs.creation_location()
 chickens_roosters.creation_location()
-while total_br <1001:
+while count:
     #Üreme
     sheeps.reproduction()
     cows.reproduction()
@@ -121,33 +121,36 @@ while total_br <1001:
 
     #hareketler
 
-    right_left(locations=hunter.location, move=hunter.move)
-    right_left(locations=sheeps.location_male, move=2)
-    right_left(locations=sheeps.location_female, move=2)
-    right_left(locations=cows.location_male, move=2)
-    right_left(locations=cows.location_female, move=2)
-    right_left(locations=wolfs.location_male, move=3)
-    right_left(locations=wolfs.location_female, move=3)
-    right_left(locations=lions.location_male, move=4)
-    right_left(locations=lions.location_female, move=4)
-    right_left(locations=chickens_roosters.location_male, move=1)
-    right_left(locations=chickens_roosters.location_female, move=1)
+    count = right_left(locations=hunter.location, move=hunter.move)
+    count = right_left(locations=sheeps.location_male, move=2)
+    count = right_left(locations=sheeps.location_female, move=2)
+    count = right_left(locations=cows.location_male, move=2)
+    count = right_left(locations=cows.location_female, move=2)
+    count = right_left(locations=wolfs.location_male, move=3)
+    count = right_left(locations=wolfs.location_female, move=3)
+    count = right_left(locations=lions.location_male, move=4)
+    count = right_left(locations=lions.location_female, move=4)
+    count = right_left(locations=chickens_roosters.location_male, move=1)
+    count = right_left(locations=chickens_roosters.location_female, move=1)
 
-    forward_backward(locations=hunter.location, move=hunter.move)
-    forward_backward(locations=sheeps.location_male, move=2)
-    forward_backward(locations=sheeps.location_female, move=2)
-    forward_backward(locations=cows.location_male, move=2)
-    forward_backward(locations=cows.location_female, move=2)
-    forward_backward(locations=wolfs.location_male, move=3)
-    forward_backward(locations=wolfs.location_female, move=3)
-    forward_backward(locations=lions.location_male, move=4)
-    total_br =  forward_backward(locations=lions.location_female, move=4)
-    total_br =  forward_backward(locations=chickens_roosters.location_male, move=1)
-    total_br = (forward_backward(locations=chickens_roosters.location_female, move=1))
-    print(total_br)
+    count= forward_backward(locations=hunter.location, move=hunter.move)
+    count =forward_backward(locations=sheeps.location_male, move=2)
+    count =forward_backward(locations=sheeps.location_female, move=2)
+    count =forward_backward(locations=cows.location_male, move=2)
+    count =forward_backward(locations=cows.location_female, move=2)
+    count =forward_backward(locations=wolfs.location_male, move=3)
+    count =forward_backward(locations=wolfs.location_female, move=3)
+    count =forward_backward(locations=lions.location_male, move=4)
+    count = forward_backward(locations=lions.location_female, move=4)
+    count = forward_backward(locations=chickens_roosters.location_male, move=1)
+    count = forward_backward(locations=chickens_roosters.location_female, move=1)
+
 else:
 
     print("""
+    **************************************************************
+    The number of animals at the end of the movement of 1000 units
+    **************************************************************
     Sheep {} male {} female,
     wolf  {} male {} female,
     Lion {} male {} female,

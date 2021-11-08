@@ -52,27 +52,35 @@ class Animal_Attributes():
 
 #hareketlerin fonsiyonlarının tanımlanması
 total_br = 0
+count = True
 def right_left(locations, move,) :
+    global total_br
+    global  count
+    for index in range(locations.__len__()):
+        if total_br >= 1000:
+            count = False
+            break
+        else:
+            if locations[index][0] <= area[0]:
+                locations[index][0] += move
+            else :
+                locations[index][0] -= move
+        total_br += (move * (index + 1))
+    return count
+def forward_backward(locations, move ) :
     global total_br
     global count
     for index in range(locations.__len__()):
-        if locations[index][0] <= area[0]:
-            locations[index][0] += move
-        else :
-            locations[index][0] -= move
-    total_br += (move * (index + 1))
-
-    return (total_br)
-def forward_backward(locations, move ) :
-    for index in range(locations.__len__()):
-        global  total_br
-
-        if locations[index][1] <= area[0]:
-            locations[index][1] += move
-        else :
-            locations[index][1] -= move
-    total_br += (move * (index + 1))
-    return (total_br)
+        if total_br >= 1000:
+            count = False
+            break
+        else:
+            if locations[index][1] <= area[0]:
+                locations[index][1] += move
+            else :
+                locations[index][1] -= move
+            total_br += (move * (index + 1))
+    return count
 
 class sheep (Animal_Attributes):
     pass
